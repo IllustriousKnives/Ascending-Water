@@ -1,7 +1,8 @@
 # [Game] Ascending Water
-Used Engine : Godot
+Engine : Godot
 
 2D Parkour Game , Gameplay about levels with Water/Lava rising up
+
 
 ### Keybinding ###
 
@@ -12,6 +13,7 @@ JUMP = **space_bar**
 CHANGE_GRAVITY = ⯅⯇⯆⯈
 
 ZOOM = **mouse_wheel**
+
 
 ### Available Levels ###
 
