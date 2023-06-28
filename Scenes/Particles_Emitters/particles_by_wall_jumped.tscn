@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw7dv3tcf3lls"]
+
+[sub_resource type="Curve" id="Curve_w0dfl"]
+min_value = 2.0
+max_value = 6.0
+_data = [Vector2(0, 5.61818), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_opg4p"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[node name="Particles_by_WallJumped" type="CPUParticles2D"]
+emitting = false
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+randomness = 0.4
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 20.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_w0dfl")
+color_ramp = SubResource("Gradient_opg4p")

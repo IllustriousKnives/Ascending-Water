@@ -1,0 +1,7 @@
+res://default_env.tres
+res://Scenes/Stages/Stage Test.tscn
+res://Assets/TilesAuto/TileSet_All.tres
+res://Assets/Tiles/One Stud Parts.tres
+res://Assets/Tiles/WallJump_Stud.tres
+res://Scenes/Entities/Player.tscn
+res://Scenes/Stages/Stage Test.gd

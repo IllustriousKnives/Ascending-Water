@@ -1,0 +1,43 @@
+2a60927148abd1d33b818b535e306557
+::res://::1682543459
+Button.gd::GDScript::-1::1682442252::0::1::::<>Node2D<>::
+default_env.tres::Environment::7194958666539121369::1682530276::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1682530289::0::1::::<><>::
+Global.gd::GDScript::-1::1682527334::0::1::::<>Node<>::
+Icon.png::CompressedTexture2D::3399344906677624101::1682522426::1682522427::1::::<><>::
+Liquid.gd::GDScript::-1::1682351706::0::1::::<>Sprite2D<>::
+Zoom_Dezoom.gd::GDScript::-1::1682448097::0::1::::<>Camera2D<>::
+::res://Assets/::1682067904
+Button.png::CompressedTexture2D::6126765571531996281::1682067835::1682067835::1::::<><>::
+Button_2.png::CompressedTexture2D::1052071950224951081::1682067904::1682067904::1::::<><>::
+Square.png::CompressedTexture2D::3094474853893296813::1678311693::1678311697::1::::<><>::
+::res://Assets/Entities/::1677620624
+::res://Assets/Player/::1677754890
+Player Size 0.png::CompressedTexture2D::8941136893290020695::1677701580::1677754890::1::::<><>::
+Player Size 1.png::CompressedTexture2D::889844643256338335::1677620636::1677754890::1::::<><>::
+Player Size 2.png::CompressedTexture2D::1175739408040168338::1677620636::1677754890::1::::<><>::
+Player Size 3.png::CompressedTexture2D::6928290907856052684::1677620636::1677754890::1::::<><>::
+Player Size 4.png::CompressedTexture2D::6069036917252429217::1677620636::1677754890::1::::<><>::
+Player Size 5.png::CompressedTexture2D::6456321795000371186::1677620636::1677754890::1::::<><>::
+Player Size 6.png::CompressedTexture2D::7111181303323550047::1677620636::1677754890::1::::<><>::
+Player Size -2.png::CompressedTexture2D::3121629046791290087::1677703169::1677754890::1::::<><>::
+::res://Assets/Tiles/::1682530105
+One Stud Parts.png::CompressedTexture2D::9191922027882308506::1682187959::1682187959::1::::<><>::
+One Stud Parts.tres::TileSet::1373740535698479095::1682530105::0::1::::<><>::uid://d37vu3pfvwoww
+Wall Jump Studs.gd::GDScript::-1::1682240434::0::1::::<>TileMap<>::
+WallJump_Stud.png::CompressedTexture2D::4998875525477341562::1682194734::1682194734::1::::<><>::
+WallJump_Stud.tres::TileSet::4465063348664893774::1682530105::0::1::::<><>::uid://cdhq0qqxxndfm
+::res://Assets/TilesAuto/::1682530105
+Test 8x8 TileSet.png::CompressedTexture2D::8386345873365698156::1677756460::1677756840::1::::<><>::
+Test 8x8 TileSet.tres::TileSet::1685322808405803256::1682065891::0::1::::<><>::uid://drqn5kkvmbkvs
+TileSet_All.png::CompressedTexture2D::6829721015781665280::1682191128::1682191128::1::::<><>::
+TileSet_All.tres::TileSet::2232754919327525984::1682530105::0::1::::<><>::uid://c4kmrioy3ks6k
+::res://Scenes/::1682241700
+::res://Scenes/Entities/::1682530276
+Player.gd::GDScript::-1::1682526976::0::1::::Player<>CharacterBody2D<>::
+Player.tscn::PackedScene::6742576792161975942::1682530276::0::1::::<><>::uid://bkqe1leckakr4<>res://Scenes/Entities/Player.gd<>uid://bkc8swlqt7dyb<>uid://dw7dv3tcf3lls<>res://Zoom_Dezoom.gd
+::res://Scenes/Particles_Emitters/::1682242381
+particles_by_wall_jumped.tscn::PackedScene::8769697851999984740::1682242381::0::1::::<><>::
+::res://Scenes/Stages/::1682530149
+Stage Test.gd::GDScript::-1::1682530149::0::1::::<>Node<>::
+Stage Test.tscn::PackedScene::3075792563414009770::1682530105::0::1::::<><>::uid://o8vqa3njs282<>res://Scenes/Stages/Stage Test.gd<>res://Button.gd<>uid://c3cfiwnk22qne<>uid://62tfaj680bc7<>uid://ttpknv03lb48<>uid://bkc8swlqt7dyb<>uid://b4u5682aj8mnm<>res://Liquid.gd<>res://Assets/Tiles/Wall Jump Studs.gd

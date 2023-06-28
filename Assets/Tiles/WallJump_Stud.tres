@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b4u5682aj8mnm"]
+
+[ext_resource type="Texture2D" uid="uid://cdhq0qqxxndfm" path="res://Assets/Tiles/WallJump_Stud.png" id="1_uw02x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6h3ch"]
+texture = ExtResource("1_uw02x")
+texture_region_size = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
+
+[resource]
+tile_size = Vector2i(2, 2)
+physics_layer_0/collision_layer = 9
+sources/1 = SubResource("TileSetAtlasSource_6h3ch")

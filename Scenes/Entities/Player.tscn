@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3cfiwnk22qne"]
+
+[ext_resource type="Texture2D" uid="uid://bkqe1leckakr4" path="res://Assets/Player/Player Size -2.png" id="1"]
+[ext_resource type="Script" path="res://Scenes/Entities/Player.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bkc8swlqt7dyb" path="res://Assets/Square.png" id="2_cbwwf"]
+[ext_resource type="PackedScene" uid="uid://dw7dv3tcf3lls" path="res://Scenes/Particles_Emitters/particles_by_wall_jumped.tscn" id="3_rpy71"]
+[ext_resource type="Script" path="res://Zoom_Dezoom.gd" id="5_o0sl6"]
+
+[sub_resource type="Curve" id="Curve_sw121"]
+max_value = 6.0
+_data = [Vector2(0, 2.34545), 0.0, -2.34545, 0, 1, Vector2(1, 0), -2.34545, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_iaimb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1.00758, 1.00758)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enajc"]
+size = Vector2(0.0499992, 0.9)
+
+[sub_resource type="Animation" id="Animation_djyth"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mc0tf"]
+resource_name = "Wall_Jump Waiting"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.691599, 1.12433, 2, 1), Color(0.66857, 0.800127, 2, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.69, 1.12, 2, 1), Color(0.67, 0.8, 2, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o00da"]
+_data = {
+"RESET": SubResource("Animation_djyth"),
+"Wall_Jump Waiting": SubResource("Animation_mc0tf")
+}
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(20, 20)
+collision_layer = 7
+script = ExtResource("2")
+
+[node name="Particles_by_moving" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 17
+lifetime = 1.2
+randomness = 0.4
+texture = ExtResource("2_cbwwf")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.05
+initial_velocity_max = 2.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_sw121")
+color_ramp = SubResource("Gradient_iaimb")
+
+[node name="Particles_by_WallJumped" parent="." instance=ExtResource("3_rpy71")]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+script = ExtResource("5_o0sl6")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.98, 0.98)
+shape = SubResource("1")
+
+[node name="WallJump_Left" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallJump_Left"]
+visible = false
+position = Vector2(-0.475, 1.49012e-09)
+shape = SubResource("RectangleShape2D_enajc")
+
+[node name="WallJump_Right" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallJump_Right"]
+visible = false
+position = Vector2(0.475, 0)
+shape = SubResource("RectangleShape2D_enajc")
+
+[node name="Colors_Effects" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o00da")
+}
+
+[connection signal="body_entered" from="WallJump_Left" to="." method="on_walljump_left"]
+[connection signal="body_entered" from="WallJump_Right" to="." method="on_walljump_right"]
